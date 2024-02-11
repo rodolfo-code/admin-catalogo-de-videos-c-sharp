@@ -173,27 +173,26 @@ public class CategoryTest
     {
         var validCategory = _categoryTestFixture.GetValidCategory();
 
-        var newValues = new { Name = "New name", Description = "New description" };
+        var categoryWithNewValues = _categoryTestFixture.GetValidCategory();
 
-        validCategory.Update(newValues.Name, newValues.Description);
+        validCategory.Update(categoryWithNewValues.Name, categoryWithNewValues.Description);
 
-        validCategory.Name.Should().Be(newValues.Name);
-        validCategory.Description.Should().Be(newValues.Description);
+        validCategory.Name.Should().Be(categoryWithNewValues.Name);
+        validCategory.Description.Should().Be(categoryWithNewValues.Description);
     }
 
     [Fact(DisplayName = nameof(UpdateOnlyName))]
     [Trait("Domain", "Category - Aggregates")]
     public void UpdateOnlyName()
     {
-        var validCategory = _categoryTestFixture.GetValidCategory();
+        var category = _categoryTestFixture.GetValidCategory();
+        var newName = _categoryTestFixture.GetValidCategoryName();
+        var currentDescription = category.Description;
 
-        var newValues = new { Name = "New name"};
-        var currentDescription = validCategory.Description;
+        category.Update(newName);
 
-        validCategory.Update(newValues.Name);
-
-        validCategory.Name.Should().Be(newValues.Name);
-        validCategory.Description.Should().Be(currentDescription);
+        category.Name.Should().Be(newName);
+        category.Description.Should().Be(currentDescription);
     }
 
     [Theory(DisplayName = nameof(UpdateErrorWhenNameIsEmpty))]
@@ -231,7 +230,7 @@ public class CategoryTest
     [Trait("Domain", "Category - Aggregate")]
     public void UpdateErrorWhenNameIsGreaterThan255Characters()
     {
-        var invalidName = String.Join(null, Enumerable.Range(1, 256).Select(_ => "a").ToArray());
+        var invalidName = _categoryTestFixture.Faker.Lorem.Letter(256);
         var validCategory = _categoryTestFixture.GetValidCategory();
         Action action = () => validCategory.Update(invalidName);
 
@@ -243,9 +242,13 @@ public class CategoryTest
     [Trait("Domain", "Category - Aggregate")]
     public void UpdateErrorWhenDescritionIsGreaterThan10_000Characters()
     {
-        var invalidDescription = String.Join(null, Enumerable.Range(1, 10_001).Select(_ => "a").ToArray());
-        var validCategory = _categoryTestFixture.GetValidCategory();
+        var invalidDescription = _categoryTestFixture.Faker.Commerce.ProductDescription();
 
+        while (invalidDescription.Length <= 10_000) 
+            invalidDescription = $"{invalidDescription} {_categoryTestFixture.Faker.Commerce.ProductDescription()}";
+        
+
+        var validCategory = _categoryTestFixture.GetValidCategory();
         Action action = () => validCategory.Update("Category name", invalidDescription);
 
         action.Should().Throw<EntityValidationException>()
