@@ -95,10 +95,6 @@ public class CategoryTest
 
     [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
     [Trait("Domain", "Category - Aggregate")]
-    //[InlineData("a")]
-    //[InlineData("ab")]
-    //[InlineData("1")]
-    //[InlineData("12")]
     [MemberData(nameof(GetNamesLessThan3Characters), parameters: 7)]
     public void InstantiateErrorWhenNameIsLessThan3Characters(string invalidName)
     {
