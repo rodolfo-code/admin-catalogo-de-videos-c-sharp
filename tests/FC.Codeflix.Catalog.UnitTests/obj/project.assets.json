@@ -1927,6 +1927,16 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
+      "FC.Codeflix.Catalog.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FC.Codeflix.Catalog.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FC.Codeflix.Catalog.Application.dll": {}
+        }
+      },
       "FC.Codeflix.Catalog.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -6419,6 +6429,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "FC.Codeflix.Catalog.Application/1.0.0": {
+      "type": "project",
+      "path": "../../src/FC.Codeflix.Catalog.Application/FC.Codeflix.Catalog.Application.csproj",
+      "msbuildProject": "../../src/FC.Codeflix.Catalog.Application/FC.Codeflix.Catalog.Application.csproj"
+    },
     "FC.Codeflix.Catalog.Domain/1.0.0": {
       "type": "project",
       "path": "../../src/FC.Codeflix.Catalog.Domain/FC.Codeflix.Catalog.Domain.csproj",
@@ -6428,6 +6443,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Bogus >= 35.4.0",
+      "FC.Codeflix.Catalog.Application >= 1.0.0",
       "FC.Codeflix.Catalog.Domain >= 1.0.0",
       "FluentAssertions >= 6.12.0",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
@@ -6464,6 +6480,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Application\\FC.Codeflix.Catalog.Application.csproj": {
+              "projectPath": "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Application\\FC.Codeflix.Catalog.Application.csproj"
+            },
             "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj": {
               "projectPath": "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj"
             }
