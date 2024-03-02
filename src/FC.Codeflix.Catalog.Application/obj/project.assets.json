@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "FC.Codeflix.Catalog.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FC.Codeflix.Catalog.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FC.Codeflix.Catalog.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FC.Codeflix.Catalog.Domain/1.0.0": {
+      "type": "project",
+      "path": "../FC.Codeflix.Catalog.Domain/FC.Codeflix.Catalog.Domain.csproj",
+      "msbuildProject": "../FC.Codeflix.Catalog.Domain/FC.Codeflix.Catalog.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "FC.Codeflix.Catalog.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj": {
+              "projectPath": "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
