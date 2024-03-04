@@ -3,6 +3,9 @@ using Xunit;
 using DomainEntity = FC.Codeflix.Catalog.Domain.Entity;
 
 namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category;
+
+[CollectionDefinition(nameof(CategoryTestFixture))]
+public class CategoryTestFixtureCollection : ICollectionFixture<CategoryTestFixture> { }
 public class CategoryTestFixture : BaseFixture
 {
     public CategoryTestFixture() : base() { }
@@ -19,7 +22,7 @@ public class CategoryTestFixture : BaseFixture
         return categoryName;
     }
 
-    public string GeValidCategoryDescription()
+    public string GetValidCategoryDescription()
     {
         var categoryDescription = Faker.Commerce.ProductDescription();
        
@@ -33,10 +36,9 @@ public class CategoryTestFixture : BaseFixture
     {
         return new(
             GetValidCategoryName(),
-            GeValidCategoryDescription()
+            GetValidCategoryDescription()
             );
     }
 }
 
-[CollectionDefinition(nameof(CategoryTestFixture))]
-public class CategoryTestFixtureCollection : ICollectionFixture<CategoryTestFixture> { }
+
