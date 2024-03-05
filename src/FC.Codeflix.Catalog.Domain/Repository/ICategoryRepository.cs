@@ -9,5 +9,5 @@ using System.Threading.Tasks;
 namespace FC.Codeflix.Catalog.Domain.Repository;
 public interface ICategoryRepository : IGenericRepository<Category>
 {
-    
+    void Insert(Catalog.UnitTests.Application.Category category, CancellationToken cancellationToken);
 }
