@@ -1,11 +1,16 @@
-﻿using FC.Codeflix.Catalog.Application.UseCases.Category.CreateCategory;
+﻿using FC.Codeflix.Catalog.Application.Interfaces;
 using FC.Codeflix.Catalog.Domain.Entity;
-using FC.Codeflix.Catalog.Domain.Exceptions;
-using FC.Codeflix.Catalog.UnitTests.Application.Category.CreateCategory;
+using FC.Codeflix.Catalog.Domain.Repository;
 using FluentAssertions;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using Moq;
+using System.Threading;
 using Xunit;
 using UseCases = FC.Codeflix.Catalog.Application.UseCases.Category.CreateCategory;
+using DomainEntity = FC.Codeflix.Catalog.Domain.Entity;
+using FC.Codeflix.Catalog.Application.UseCases.Category.CreateCategory;
+using FC.Codeflix.Catalog.Domain.Exceptions;
+using FC.Codeflix.Catalog.UnitTests.Application.Category.CreateCategory;
 
 namespace FC.Codeflix.Catalog.UnitTests.Application.CreateCategory;
 
@@ -35,16 +40,16 @@ public class CreateCategoryTest
 
         repositoryMock.Verify(
             repository => repository.Insert(
-                It.IsAny<Category>(), 
+                It.IsAny<DomainEntity.Category>(),
                 It.IsAny<CancellationToken>()
-                ), 
+                ),
             Times.Once
             );
 
         unitOfWorkMock.Verify(
             unitOfWork => unitOfWork.Commit(
                 It.IsAny<CancellationToken>()
-                ), 
+                ),
             Times.Once
             );
 
@@ -55,7 +60,6 @@ public class CreateCategoryTest
         output.Id.Should().NotBeEmpty();
         output.CreatedAt.Should().NotBeSameDateAs(default);
     }
-
 
     [Theory(DisplayName = nameof(ThrowWhenCantInstantiateCategory))]
     [Trait("Application", "CreateCategory - Use Cases")]
@@ -79,50 +83,5 @@ public class CreateCategoryTest
         await task.Should()
             .ThrowAsync<EntityValidationException>()
             .WithMessage(exceptionMessage);
-    }
-
-    public static IEnumerable<object[]> GetInvalidInputs(int times = 12)
-    {
-        var fixture = new CreateCategoryTestFixture();
-        var invalidInputsList = new List<object[]>();
-        var totalInvalidCases = 4;
-
-        for (int index = 0; index < times; index++)
-        {
-            switch (index % totalInvalidCases)
-            {
-                case 0:
-                    invalidInputsList.Add(new object[] {
-                        fixture.GetInvalidInputShortName(),
-                        "Name should be at least 3 characters long"
-                    });
-                    break;
-                case 1:
-                    invalidInputsList.Add(new object[] {
-                        fixture.GetInvalidInputTooLongName(),
-                        "Name should be less or equal 255 characters long"
-                    });
-                    break;
-                case 2:
-                    invalidInputsList.Add(new object[] {
-                        fixture.GetInvalidInputCategoryNull(),
-                        "Description should not be null"
-                    });
-                    break;
-                case 3:
-                    invalidInputsList.Add(new object[] {
-                        fixture.GetInvalidInputTooLongDescription(),
-                        "Description should be less or equal 10000 characters long"
-                    });
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        return invalidInputsList;
-
-
-        return invalidInputList;
     }
 }
