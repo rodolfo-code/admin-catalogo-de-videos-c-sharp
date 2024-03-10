@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bHTuVw+/3K3gM9npP3tO6ffOcwZshzGkIMsFUqUfzKqL3UxMj/VTCMuG1MdMPVlku0zt12X09aOgQ57elUVX5g==",
+  "dgSpecHash": "eog1D9ayS6Hb4KQClAIXCj3K/QWvJVi73Kpvwm+cJHLnQXbSpoSF0B3u9rqur5wAVaKMp8JRgwlhJt19gtihaw==",
   "success": true,
   "projectFilePath": "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Application\\FC.Codeflix.Catalog.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
