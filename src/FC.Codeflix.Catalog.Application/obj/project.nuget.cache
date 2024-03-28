@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eog1D9ayS6Hb4KQClAIXCj3K/QWvJVi73Kpvwm+cJHLnQXbSpoSF0B3u9rqur5wAVaKMp8JRgwlhJt19gtihaw==",
+  "dgSpecHash": "IZoYiuQhaG0cX0OZAHbV865h6rQitng1FUlU5lC0LxCqnR8ARQ1d5DtP9StQUMaMpU+VKKFDlLyx7/ZJ8Meq4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\RodolfoOliveira\\Desktop\\Repos\\FullCycle\\Codeflix\\FC.Codeflix.Catalog\\src\\FC.Codeflix.Catalog.Application\\FC.Codeflix.Catalog.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\RodolfoOliveira\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

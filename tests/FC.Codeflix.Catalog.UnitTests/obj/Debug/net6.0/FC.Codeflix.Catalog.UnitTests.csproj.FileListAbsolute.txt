@@ -115,3 +115,4 @@ C:\Users\RodolfoOliveira\Desktop\Repos\FullCycle\Codeflix\FC.Codeflix.Catalog\te
 C:\Users\RodolfoOliveira\Desktop\Repos\FullCycle\Codeflix\FC.Codeflix.Catalog\tests\FC.Codeflix.Catalog.UnitTests\bin\Debug\net6.0\MediatR.dll
 C:\Users\RodolfoOliveira\Desktop\Repos\FullCycle\Codeflix\FC.Codeflix.Catalog\tests\FC.Codeflix.Catalog.UnitTests\bin\Debug\net6.0\MediatR.Contracts.dll
 C:\Users\RodolfoOliveira\Desktop\Repos\FullCycle\Codeflix\FC.Codeflix.Catalog\tests\FC.Codeflix.Catalog.UnitTests\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\RodolfoOliveira\Desktop\Repos\FullCycle\Codeflix\FC.Codeflix.Catalog\tests\FC.Codeflix.Catalog.UnitTests\bin\Debug\net6.0\FluentValidation.dll
