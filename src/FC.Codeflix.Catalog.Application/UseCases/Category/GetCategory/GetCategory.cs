@@ -15,7 +15,6 @@ public class GetCategory : IGetCategory
     public async Task<CategoryModelOutput> Handle(GetCategoryInput request, CancellationToken cancellationToken)
     {
         var category = await _categoryRepository.Get(request.Id, cancellationToken);
-
         return CategoryModelOutput.FromCategory(category);
     }
 }
